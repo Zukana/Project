@@ -3,11 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: "Home" , welcome: "Welcome to the Home page"});
+    res.render('home', { title: "Home"});
 });
 
-router.get('/aboutMe', function(req, res, next) {
-    res.render('aboutMe', { title: "About Me", welcome: "Welcome to About Me" });
+router.get('/curriculumVitae', function(req, res, next) {
+    res.render('curriculumVitae', {title: "Curriculum Vitae"});
 });
 
 router.get('/tester', function(req, res, next) {
@@ -25,7 +25,7 @@ router.get('/projectSel', function(req, res, next) {
     res.render('projects/projectSelTem', {catagory: cat});
 });
 
-router.get('/Dissertation', function(req, res, next) {
+router.get('/dissertation', function(req, res, next) {
     res.redirect("https://devweb3000.cis.strath.ac.uk/~xpb16190/TruthTableGame/");
 });
 
