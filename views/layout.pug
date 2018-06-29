@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    block scripts
+      script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js", integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", crossorigin="anonymous")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js", integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ", crossorigin="anonymous")
+      script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js", integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm", crossorigin="anonymous")
+
+  body
+
+    block nav
+      nav.navbar.navbar-expand-md.navbar-dark.bg-primary.fixed-top
+        a.navbar-brand(href="/") Project
+        button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expended="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        div.collapse.navbar-collapse(id="navbarNav")
+          div.navbar-nav.mr-auto
+            a.nav-item.nav-link(href="/AboutMe") About Me
+            a.nav-item.nav-link(href="/Dissertation" target="_blank") Dissertation
+            div.navbar-item.dropdown
+              a.nav-link.dropdown-toggle(href="#", id="navbardrop", data-toggle="dropdown", aria-haspopup="true", aria-expended="false") Projects
+              div.dropdown-menu(aria-labelledby="navbardrop")
+                a.dropdown-item(href="/projectSel?cat=Text") Test
+
+    div(style="padding-top: 20px")
+      h1= title
+      p= welcome
+      block content
+
